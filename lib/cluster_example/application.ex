@@ -10,13 +10,13 @@ defmodule ClusterExample.Application do
     topologies = 
       [
         example: [
-          strategy: Cluster.Strategy.LocalEpmd,
-          config: [hosts: [:"a@localhost", :"b@localhost"]],
+          strategy: Cluster.Strategy.Epmd,
+          config: [hosts: [:"a@164.92.242.104", :"b@167.99.252.129"]],
         ]
       ]
 
     children = [
-      {Cluster.Supervisor, [topologies, [name: MyApp.ClusterSupervisor]]},
+      {Cluster.Supervisor, [topologies, [name: ClusterExample.ClusterSupervisor]]},
       # Start the Ecto repository
       ClusterExample.Repo,
       # Start the Telemetry supervisor
