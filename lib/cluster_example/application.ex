@@ -11,7 +11,7 @@ defmodule ClusterExample.Application do
       [
         example: [
           strategy: Cluster.Strategy.Epmd,
-          config: [hosts: [:"a@164.92.242.104", :"b@167.99.252.129"]],
+          config: [hosts: [:"a@anode", :"b@bnode"]],
         ]
       ]
 
